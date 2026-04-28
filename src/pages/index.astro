@@ -54,15 +54,15 @@ const projects = [
 			</p>
 		</section>
 
-		<section id="experience" class="experience" aria-labelledby="experience-title">
+		<section id="experience" class="section experience" aria-labelledby="experience-title">
 			<h2 id="experience-title" class="section__title">Experience</h2>
-			<p class="section__body">
+			<div class="experience__timeline">
 				<Timeline theme="stroke fill">
 					<TimelineItem title="First Job">First Job</TimelineItem>
 					<TimelineItem title="Second Job">Second Job</TimelineItem>
 					<TimelineItem title="Third Job">Third Job</TimelineItem>
 				</Timeline>
-			</p>
+			</div>
 		</section>
 
 		<section id="projects" class="section" aria-labelledby="projects-title">
@@ -117,7 +117,7 @@ const projects = [
 
 	<footer class="site-footer">
 		<div class="site-footer__inner">
-			© {new Date().getFullYear()} Your Name. Built with Astro.
+			© {new Date().getFullYear()} Pablo Aragonés López. Built with Astro.
 		</div>
 	</footer>
 </BaseLayout>
