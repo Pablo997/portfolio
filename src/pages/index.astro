@@ -1,17 +1,123 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Timeline, TimelineItem} from 'webcoreui/astro';
 
+const title = 'Pablo Aragonés López — Portfolio';
+const description = 'Developer portfolio — projects and contact.';
+
+const projects = [
+	{
+		title: 'Project one',
+		meta: 'Stack: Astro, TypeScript',
+		description: 'Short description of the problem and what you built.',
+		repo: 'https://github.com',
+		demo: 'https://example.com',
+	},
+	{
+		title: 'Project two',
+		meta: 'Stack: …',
+		description: 'Replace with real projects from your GitHub.',
+		repo: 'https://github.com',
+		demo: null,
+	},
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={title} description={description}>
+	<header class="site-header">
+		<div class="site-header__inner">
+			<a class="site-header__brand" href="#">Pablo Aragonés López</a>
+			<nav class="site-header__nav" aria-label="Primary">
+				<a class="site-header__link" href="#about">About</a>
+				<a class="site-header__link" href="#projects">Projects</a>
+				<a class="site-header__link" href="#contact">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="main" class="site-main">
+		<section class="hero" aria-labelledby="hero-title">
+			<h1 id="hero-title" class="hero__title">Hi, I’m Pablo Aragonés López.</h1>
+			<p class="hero__lead">
+				One or two lines: role, what you care about building, and what you’re looking for next.
+			</p>
+			<div class="hero__actions">
+				<a class="button button--primary" href="#contact">Get in touch</a>
+				<a class="button button--ghost" href="#projects">View projects</a>
+			</div>
+		</section>
+
+		<section id="about" class="section" aria-labelledby="about-title">
+			<h2 id="about-title" class="section__title">About</h2>
+			<p class="section__body">
+				Paragraph about background, stack, and how you work. Keep it scannable; recruiters skim.
+			</p>
+		</section>
+
+		<section id="experience" class="experience" aria-labelledby="experience-title">
+			<h2 id="experience-title" class="section__title">Experience</h2>
+			<p class="section__body">
+				<Timeline theme="stroke fill">
+					<TimelineItem title="First Job">First Job</TimelineItem>
+					<TimelineItem title="Second Job">Second Job</TimelineItem>
+					<TimelineItem title="Third Job">Third Job</TimelineItem>
+				</Timeline>
+			</p>
+		</section>
+
+		<section id="projects" class="section" aria-labelledby="projects-title">
+			<h2 id="projects-title" class="section__title">Projects</h2>
+			<ul class="project-list">
+				{
+					projects.map((p) => (
+						<li>
+							<article class="project-card">
+								<h3 class="project-card__title">{p.title}</h3>
+								<p class="project-card__meta">{p.meta}</p>
+								<p class="project-card__desc">{p.description}</p>
+								<div class="project-card__links">
+									<a href={p.repo} target="_blank" rel="noopener noreferrer">
+										Repository
+									</a>
+									{p.demo && (
+										<a href={p.demo} target="_blank" rel="noopener noreferrer">
+											Live demo
+										</a>
+									)}
+								</div>
+							</article>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+
+		<section id="contact" class="section" aria-labelledby="contact-title">
+			<h2 id="contact-title" class="section__title">Contact</h2>
+			<p class="section__body">
+				Prefer email or LinkedIn — replace with your real links.
+			</p>
+			<ul class="contact-list">
+				<li>
+					<a class="contact-list__link" href="mailto:you@example.com">Email</a>
+				</li>
+				<li>
+					<a class="contact-list__link" href="https://github.com" target="_blank" rel="noopener noreferrer">
+						GitHub
+					</a>
+				</li>
+				<li>
+					<a class="contact-list__link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+						LinkedIn
+					</a>
+				</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			© {new Date().getFullYear()} Your Name. Built with Astro.
+		</div>
+	</footer>
+</BaseLayout>
