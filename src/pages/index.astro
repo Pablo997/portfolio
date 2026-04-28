@@ -1,26 +1,54 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Timeline, TimelineItem} from 'webcoreui/astro';
+import { Timeline, TimelineItem } from 'webcoreui/astro';
 
-const title = 'Pablo Aragonés López — Portfolio';
-const description = 'Developer portfolio — projects and contact.';
+const title = 'Pablo Aragonés López — Lead Software Engineer';
+const description =
+	'Lead Software Engineer and Senior Backend Developer in Alicante, Spain. Microservices, Spring Boot, and cloud-native systems for Maersk / APM Terminals; technical author at Baeldung.';
 
-const projects = [
+const projects: {
+	title: string;
+	meta: string;
+	description: string;
+	links: { label: string; href: string }[];
+}[] = [
 	{
-		title: 'Project one',
-		meta: 'Stack: Astro, TypeScript',
-		description: 'Short description of the problem and what you built.',
-		repo: 'https://github.com',
-		demo: 'https://example.com',
+		title: 'Port operations digital twin (Maersk / APM Terminals)',
+		meta: 'Java 17/21 · Spring Boot · Spring Cloud · Redis · Docker · Real-time telemetry',
+		description:
+			'Real-time 3D monitoring for global terminal operations: cranes, vessels, and containers with live telemetry and operational data to improve port logistics and maintenance efficiency.',
+		links: [],
 	},
 	{
-		title: 'Project two',
-		meta: 'Stack: …',
-		description: 'Replace with real projects from your GitHub.',
-		repo: 'https://github.com',
-		demo: null,
+		title: 'Technical writing (Baeldung)',
+		meta: 'Spring Boot · Microservices · Backend architecture',
+		description:
+			'Articles and production-style examples for a large Java audience, with supporting GitHub repositories.',
+		links: [
+			{
+				label: 'Author profile',
+				href: 'https://www.baeldung.com/author/pabloaragoneslopez',
+			},
+		],
 	},
 ];
+
+const publications: { title: string; date: string; href: string }[] = [
+	{
+		title: 'Handle Spring Security Exceptions',
+		date: 'Jan 2024',
+		href: 'https://www.baeldung.com/spring-security-exceptions',
+	},
+	{
+		title: '@RequestMapping Value in Properties File',
+		date: 'May 2022',
+		href: 'https://www.baeldung.com/spring-requestmapping-properties-file',
+	},
+];
+
+const linkedInUrl =
+	'https://www.linkedin.com/in/pablo-aragon%C3%A9s-l%C3%B3pez-07ba3715b';
+const tableauUrl = 'https://public.tableau.com/app/profile/pablo.aragon.s.l.pez/vizzes';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -29,7 +57,9 @@ const projects = [
 			<a class="site-header__brand" href="#">Pablo Aragonés López</a>
 			<nav class="site-header__nav" aria-label="Primary">
 				<a class="site-header__link" href="#about">About</a>
+				<a class="site-header__link" href="#experience">Experience</a>
 				<a class="site-header__link" href="#projects">Projects</a>
+				<a class="site-header__link" href="#writing">Writing</a>
 				<a class="site-header__link" href="#contact">Contact</a>
 			</nav>
 		</div>
@@ -39,18 +69,37 @@ const projects = [
 		<section class="hero" aria-labelledby="hero-title">
 			<h1 id="hero-title" class="hero__title">Hi, I’m Pablo Aragonés López.</h1>
 			<p class="hero__lead">
-				One or two lines: role, what you care about building, and what you’re looking for next.
+				Lead Software Engineer with 6+ years building and scaling distributed backend systems in production.
+				I design event-driven microservices and lead delivery from architecture to deployment — currently for
+				Maersk / APM Terminals platforms used worldwide, processing live telemetry and operational data.
 			</p>
 			<div class="hero__actions">
 				<a class="button button--primary" href="#contact">Get in touch</a>
-				<a class="button button--ghost" href="#projects">View projects</a>
+				<a class="button button--ghost" href="#experience">Experience</a>
 			</div>
 		</section>
 
 		<section id="about" class="section" aria-labelledby="about-title">
 			<h2 id="about-title" class="section__title">About</h2>
 			<p class="section__body">
-				Paragraph about background, stack, and how you work. Keep it scannable; recruiters skim.
+				I’m based in <strong>Alicante, Spain</strong>. My focus is backend architecture, cloud-native development,
+				and data-intensive applications — with professional experience in <strong>Node.js (NestJS)</strong> and
+				<strong>Python</strong>, and a strong core in <strong>Java</strong> and the Spring ecosystem. I care
+				about scalability, resilience, and observability in systems that run 24/7.
+			</p>
+			<p class="section__body">
+				<strong>Education:</strong> Bachelor’s in Computer Engineering (Computation), University of Alicante
+				(2015–2019). Machine Learning course at Saturdays.AI (2019–2020). Linguistic immersion in English,
+				Universidad Internacional Menéndez Pelayo (2017).
+			</p>
+			<p class="section__body">
+				<strong>Languages:</strong> Spanish (native), English (C1 — daily professional use with international
+				clients).
+			</p>
+			<p class="section__body">
+				<strong>Core stack:</strong> Java (8→21), Spring Boot, Spring Cloud, Node.js (NestJS), Python, REST,
+				microservices, event-driven design, Docker, Jenkins, SQL Server, PostgreSQL, MongoDB, Redis,
+				Elasticsearch, Prometheus, Grafana, ELK, Git. Cloud: AWS, Azure; GCP and Kubernetes in progress.
 			</p>
 		</section>
 
@@ -58,9 +107,25 @@ const projects = [
 			<h2 id="experience-title" class="section__title">Experience</h2>
 			<div class="experience__timeline">
 				<Timeline theme="stroke fill">
-					<TimelineItem title="First Job">First Job</TimelineItem>
-					<TimelineItem title="Second Job">Second Job</TimelineItem>
-					<TimelineItem title="Third Job">Third Job</TimelineItem>
+					<TimelineItem title="Lead Software Engineer — Systems, Servers & Solutions S.L. · Jul 2021 – Present">
+						Leading backend development and architecture for Maersk / APM Terminals digital products. Microservice
+						ecosystem (21 services) with Spring Boot, Spring Cloud, Redis, and Docker — live telemetry and
+						transactional data. CI/CD with Jenkins; event-driven patterns across services. Integrations with
+						industrial systems (Ignition, Navis 4, IFS, SQL Server). Observability with Prometheus, Grafana, and
+						ELK. Mentoring, code reviews, and collaboration with global stakeholders.
+					</TimelineItem>
+					<TimelineItem title="Technical Author — Baeldung · Mar 2022 – Present">
+						Technical articles on Spring Boot, microservices, and backend architecture; production-oriented GitHub
+						examples. Audience of 100K+ monthly readers across the Java community.
+					</TimelineItem>
+					<TimelineItem title="Java Software Engineer — Systems, Servers & Solutions S.L. · Oct 2019 – Jul 2021">
+						Spring Boot, Hibernate, and JPA with TDD and clean architecture. Jenkins CI/CD and cross-team delivery
+						with frontend, QA, and DevOps.
+					</TimelineItem>
+					<TimelineItem title="Backend Developer (Intern) — Aire Networks del Mediterráneo · Nov 2018 – Apr 2019">
+						Backend components for data processing and predictive modelling in R&amp;D; ML/DL for network
+						optimization.
+					</TimelineItem>
 				</Timeline>
 			</div>
 		</section>
@@ -75,17 +140,40 @@ const projects = [
 								<h3 class="project-card__title">{p.title}</h3>
 								<p class="project-card__meta">{p.meta}</p>
 								<p class="project-card__desc">{p.description}</p>
-								<div class="project-card__links">
-									<a href={p.repo} target="_blank" rel="noopener noreferrer">
-										Repository
-									</a>
-									{p.demo && (
-										<a href={p.demo} target="_blank" rel="noopener noreferrer">
-											Live demo
-										</a>
-									)}
-								</div>
+								{p.links.length > 0 && (
+									<div class="project-card__links">
+										{p.links.map((link) => (
+											<a href={link.href} target="_blank" rel="noopener noreferrer">
+												{link.label}
+											</a>
+										))}
+									</div>
+								)}
 							</article>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+
+		<section id="writing" class="section" aria-labelledby="writing-title">
+			<h2 id="writing-title" class="section__title">Selected publications</h2>
+			<p class="section__body">
+				Representative tutorials on Baeldung — see the full list on my
+				<a href="https://www.baeldung.com/author/pabloaragoneslopez" target="_blank" rel="noopener noreferrer">
+					author profile
+				</a>.
+			</p>
+			<ul class="publication-list">
+				{
+					publications.map((pub) => (
+						<li class="publication-list__item">
+							<p class="publication-list__meta">Baeldung · {pub.date}</p>
+							<p class="publication-list__title">
+								<a href={pub.href} target="_blank" rel="noopener noreferrer">
+									{pub.title}
+								</a>
+							</p>
 						</li>
 					))
 				}
@@ -95,21 +183,24 @@ const projects = [
 		<section id="contact" class="section" aria-labelledby="contact-title">
 			<h2 id="contact-title" class="section__title">Contact</h2>
 			<p class="section__body">
-				Prefer email or LinkedIn — replace with your real links.
+				Best reach is email or LinkedIn. You can also explore my public Tableau work.
 			</p>
 			<ul class="contact-list">
 				<li>
-					<a class="contact-list__link" href="mailto:you@example.com">Email</a>
+					<a class="contact-list__link" href="mailto:pabloaragones97@gmail.com">Email</a>
 				</li>
 				<li>
-					<a class="contact-list__link" href="https://github.com" target="_blank" rel="noopener noreferrer">
-						GitHub
-					</a>
-				</li>
-				<li>
-					<a class="contact-list__link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+					<a class="contact-list__link" href={linkedInUrl} target="_blank" rel="noopener noreferrer">
 						LinkedIn
 					</a>
+				</li>
+				<li>
+					<a class="contact-list__link" href={tableauUrl} target="_blank" rel="noopener noreferrer">
+						Tableau public
+					</a>
+				</li>
+				<li>
+					<a class="contact-list__link" href="tel:+34638279025">Phone</a>
 				</li>
 			</ul>
 		</section>
@@ -117,7 +208,7 @@ const projects = [
 
 	<footer class="site-footer">
 		<div class="site-footer__inner">
-			© {new Date().getFullYear()} Pablo Aragonés López. Built with Astro.
+			© {new Date().getFullYear()} Pablo Aragonés López · Alicante, Spain. Built with Astro.
 		</div>
 	</footer>
 </BaseLayout>
