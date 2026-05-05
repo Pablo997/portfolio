@@ -3,14 +3,14 @@
 	--color-bg: #fdfcfb;
 	--color-bg-elevated: #fefefe;
 	--color-surface: #ffffff;
-	--color-ink: #1f1c19;
-	--color-ink-muted: #5c5650;
-	--color-ink-faint: #8a847a;
+	--color-ink: #1a1714;
+	--color-ink-muted: #4a443d;
+	--color-ink-faint: #6e665c;
 	--color-accent: #3d5a4a;
 	--color-accent-hover: #2f4538;
 	--color-accent-soft: #e8efe9;
 	--color-border: #e3ddd4;
-	--color-border-soft: #f4f1eb;
+	--color-border-soft: #e7e1d8;
 	--font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	--font-serif: 'Newsreader', 'Georgia', serif;
 	--radius-soft: 14px;
