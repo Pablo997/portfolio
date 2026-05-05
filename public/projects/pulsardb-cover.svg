@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Clock inspired abstract cover">
+	<defs>
+		<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#f3faf6" />
+			<stop offset="100%" stop-color="#e8f3ee" />
+		</linearGradient>
+	</defs>
+	<rect width="1280" height="720" fill="url(#bg)" />
+
+	<g transform="translate(640 360)">
+		<circle r="206" fill="#f4f4f4" stroke="#2f3034" stroke-width="26" />
+		<circle r="160" fill="#f7b518" />
+		<circle r="126" fill="none" stroke="#2f3034" stroke-width="16" />
+		<circle r="18" fill="#2f3034" />
+
+		<line x1="0" y1="0" x2="0" y2="-92" stroke="#2f3034" stroke-width="16" stroke-linecap="round" />
+		<line x1="0" y1="0" x2="82" y2="60" stroke="#2f3034" stroke-width="16" stroke-linecap="round" />
+
+		<g stroke="#2f3034" stroke-width="10" stroke-linecap="round">
+			<line x1="0" y1="-170" x2="0" y2="-152" />
+			<line x1="120" y1="-120" x2="108" y2="-108" />
+			<line x1="170" y1="0" x2="152" y2="0" />
+			<line x1="120" y1="120" x2="108" y2="108" />
+			<line x1="0" y1="170" x2="0" y2="152" />
+			<line x1="-120" y1="120" x2="-108" y2="108" />
+			<line x1="-170" y1="0" x2="-152" y2="0" />
+			<line x1="-120" y1="-120" x2="-108" y2="-108" />
+		</g>
+
+		<circle cx="-88" cy="-40" r="34" fill="#f4f4f4" />
+		<circle cx="88" cy="-40" r="34" fill="#f4f4f4" />
+	</g>
+</svg>

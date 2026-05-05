@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Built & Shipped — Pablo Aragonés López';
+const description =
+	'Built & shipped software projects by Pablo Aragonés López, including live demos, repositories, and technical highlights.';
+---
+
+<BaseLayout title={title} description={description}>
+	<header class="site-header">
+		<div class="site-header__inner">
+			<a class="site-header__brand" href="/">Pablo Aragonés López</a>
+			<nav class="site-header__nav" aria-label="Primary">
+				<a class="site-header__link" href="/">Home</a>
+				<a class="site-header__link" href="/projects">Projects</a>
+				<a class="site-header__link" href="/#contact">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="main" class="site-main">
+		<section class="hero" aria-labelledby="projects-hero-title">
+			<h1 id="projects-hero-title" class="hero__title">Built &amp; Shipped</h1>
+		</section>
+
+		<section class="section" aria-labelledby="project-montana-title">
+			<article class="project-showcase">
+				<div class="project-showcase__media">
+					<img
+						src="/projects/montana-web-cover.svg"
+						alt="Montana project cover with map and incident markers"
+						loading="lazy"
+					/>
+				</div>
+
+				<div class="project-showcase__content">
+					<p class="project-showcase__kicker">Featured project · MVP launched</p>
+					<h2 id="project-montana-title" class="project-showcase__title">
+						Montana — Real-time mountain incident map
+					</h2>
+					<p class="project-showcase__summary">
+						A community map for hikers, trail runners, and climbers to report mountain incidents and points of
+						interest in real time. Reports are crowd-validated with up/down votes, and users receive web push
+						alerts for incidents in their area.
+					</p>
+					<p class="project-showcase__summary">
+						Built with Next.js, TypeScript, Supabase/PostGIS, and a PWA shell focused on real-world mountain
+						usage: offline support, compressed image uploads, EXIF stripping, and role-based protections.
+					</p>
+
+					<ul class="project-showcase__tags" aria-label="Technology stack">
+						<li class="project-showcase__tag">Next.js</li>
+						<li class="project-showcase__tag">TypeScript</li>
+						<li class="project-showcase__tag">Supabase</li>
+						<li class="project-showcase__tag">PostGIS</li>
+						<li class="project-showcase__tag">PWA</li>
+						<li class="project-showcase__tag">Web Push</li>
+					</ul>
+
+					<div class="project-showcase__links">
+						<a
+							class="button button--primary"
+							href="https://montana-web.vercel.app/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Open live app
+						</a>
+						<a
+							class="button button--ghost"
+							href="https://github.com/Pablo997/montana-web"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View repository
+						</a>
+					</div>
+				</div>
+			</article>
+		</section>
+
+		<section class="section" aria-labelledby="project-pulsardb-title">
+			<article class="project-showcase project-showcase--secondary">
+				<div class="project-showcase__media">
+					<img
+						src="/projects/pulsardb-cover.svg"
+						alt="PulsarDB project cover with metrics graph and timeline line"
+						loading="lazy"
+					/>
+				</div>
+				<div class="project-showcase__content">
+					<p class="project-showcase__kicker">Systems project</p>
+					<h2 id="project-pulsardb-title" class="project-showcase__title">
+						PulsarDB — Lightweight time-series database
+					</h2>
+					<p class="project-showcase__summary">
+						A Go-based time-series database for edge and IoT use cases, designed for high-throughput writes
+						and low-latency queries with a thread-safe in-memory engine and binary WAL durability.
+					</p>
+					<ul class="project-showcase__tags" aria-label="PulsarDB technology stack">
+						<li class="project-showcase__tag">Go</li>
+						<li class="project-showcase__tag">WAL</li>
+						<li class="project-showcase__tag">REST API</li>
+						<li class="project-showcase__tag">Concurrency</li>
+						<li class="project-showcase__tag">Edge / IoT</li>
+					</ul>
+					<div class="project-showcase__links">
+						<a
+							class="button button--ghost"
+							href="https://github.com/Pablo997/pulsardb"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View repository
+						</a>
+					</div>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			© {new Date().getFullYear()} Pablo Aragonés López · Alicante, Spain. Built with Astro.
+		</div>
+	</footer>
+</BaseLayout>

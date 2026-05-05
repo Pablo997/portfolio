@@ -31,6 +31,34 @@ const projects: {
 			},
 		],
 	},
+	{
+		title: 'Montana — Real-time mountain incident map',
+		meta: 'Next.js · TypeScript · Supabase · PostGIS · PWA · Web Push',
+		description:
+			'Community map for hikers and mountain sports users to report hazards and useful waypoints, with voting-based validation, real-time updates, and push notifications.',
+		links: [
+			{
+				label: 'Live',
+				href: 'https://montana-web.vercel.app/',
+			},
+			{
+				label: 'Repository',
+				href: 'https://github.com/Pablo997/montana-web',
+			},
+		],
+	},
+	{
+		title: 'PulsarDB — Lightweight time-series database',
+		meta: 'Go · WAL · Concurrent in-memory engine · REST API · Edge/IoT',
+		description:
+			'High-throughput time-series database for edge and IoT workloads, focused on low-latency writes/queries and durability via binary WAL.',
+		links: [
+			{
+				label: 'Repository',
+				href: 'https://github.com/Pablo997/pulsardb',
+			},
+		],
+	},
 ];
 
 const publications: { title: string; date: string; href: string }[] = [
@@ -90,7 +118,7 @@ const structuredData = {
 			<nav class="site-header__nav" aria-label="Primary">
 				<a class="site-header__link" href="#about">About</a>
 				<a class="site-header__link" href="#experience">Experience</a>
-				<a class="site-header__link" href="#projects">Projects</a>
+				<a class="site-header__link" href="/projects">Projects</a>
 				<a class="site-header__link" href="#writing">Writing</a>
 				<a class="site-header__link" href="#contact">Contact</a>
 			</nav>
@@ -172,7 +200,10 @@ const structuredData = {
 		</section>
 
 		<section id="projects" class="section" aria-labelledby="projects-title">
-			<h2 id="projects-title" class="section__title">Projects</h2>
+			<h2 id="projects-title" class="section__title">
+				Projects
+				<a class="section__title-link" href="/projects">See full page</a>
+			</h2>
 			<ul class="project-list">
 				{
 					projects.map((p) => (
