@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Pablo Aragonés López  Lead Software Engineer">
+	<defs>
+		<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#fdfcfb" />
+			<stop offset="100%" stop-color="#e8efe9" />
+		</linearGradient>
+	</defs>
+	<rect width="1200" height="630" fill="url(#g)" />
+	<rect x="0" y="0" width="1200" height="630" fill="none" stroke="#e3ddd4" stroke-width="2" opacity="0.6" />
+	<text x="96" y="280" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="500" fill="#1f1c19">
+		Pablo Aragonés López
+	</text>
+	<text x="96" y="360" font-family="system-ui, sans-serif" font-size="28" font-weight="500" fill="#3d5a4a">
+		Lead Software Engineer · Backend &amp; architecture
+	</text>
+	<text x="96" y="420" font-family="system-ui, sans-serif" font-size="22" fill="#5c5650">
+		Spring · Microservices · Cloud-native systems
+	</text>
+</svg>

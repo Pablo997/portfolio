@@ -4,9 +4,27 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	/** Path or absolute URL for og:image (default /og-cover.svg) */
+	ogImage?: string;
+	/** If set, adds <meta name="robots"> (e.g. noindex for 404) */
+	robots?: string;
+	structuredData?: Record<string, unknown>;
 }
 
-const { title, description = 'Developer portfolio' } = Astro.props;
+const {
+	title,
+	description = 'Developer portfolio',
+	ogImage = '/og-cover.svg',
+	robots,
+	structuredData,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const resolvedOrigin = Astro.site?.origin ?? Astro.url.origin;
+
+const ogImageURL = ogImage.startsWith('http')
+	? ogImage
+	: new URL(ogImage.startsWith('/') ? ogImage : `/${ogImage}`, `${resolvedOrigin}/`).href;
 ---
 
 <!doctype html>
@@ -23,7 +41,27 @@ const { title, description = 'Developer portfolio' } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		{robots && <meta name="robots" content={robots} />}
+		<link rel="canonical" href={canonicalURL.href} />
 		<title>{title}</title>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL.href} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:locale" content="en_GB" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
+
+		{
+			structuredData && (
+				<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+			)
+		}
 	</head>
 	<body class="site">
 		<a class="site__skip-link" href="#main">Skip to content</a>

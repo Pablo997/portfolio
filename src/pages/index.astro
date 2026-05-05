@@ -49,12 +49,44 @@ const publications: { title: string; date: string; href: string }[] = [
 const linkedInUrl =
 	'https://www.linkedin.com/in/pablo-aragon%C3%A9s-l%C3%B3pez-07ba3715b';
 const tableauUrl = 'https://public.tableau.com/app/profile/pablo.aragon.s.l.pez/vizzes';
+/** Update if your GitHub username differs (inferred from your email local part). */
+const githubUrl = 'https://github.com/Pablo997';
+
+const siteBase = Astro.site ?? Astro.url;
+const personPageUrl = new URL('/', siteBase).href;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Pablo Aragonés López',
+	url: personPageUrl,
+	email: 'pabloaragones97@gmail.com',
+	jobTitle: 'Lead Software Engineer',
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Alicante',
+		addressCountry: 'ES',
+	},
+	sameAs: [
+		linkedInUrl,
+		tableauUrl,
+		githubUrl,
+		'https://www.baeldung.com/author/pabloaragoneslopez',
+	],
+	knowsAbout: [
+		'Java',
+		'Spring Boot',
+		'Microservices',
+		'Backend engineering',
+		'Cloud-native systems',
+	],
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} structuredData={structuredData}>
 	<header class="site-header">
 		<div class="site-header__inner">
-			<a class="site-header__brand" href="#">Pablo Aragonés López</a>
+			<a class="site-header__brand" href="/">Pablo Aragonés López</a>
 			<nav class="site-header__nav" aria-label="Primary">
 				<a class="site-header__link" href="#about">About</a>
 				<a class="site-header__link" href="#experience">Experience</a>
@@ -73,8 +105,17 @@ const tableauUrl = 'https://public.tableau.com/app/profile/pablo.aragon.s.l.pez/
 				I design event-driven microservices and lead delivery from architecture to deployment — currently for
 				Maersk / APM Terminals platforms used worldwide, processing live telemetry and operational data.
 			</p>
+			<p class="hero__availability">
+				Based in Alicante, Spain · Open to senior backend / architecture conversations · Remote-friendly within
+				compatible time zones.
+			</p>
 			<div class="hero__actions">
 				<a class="button button--primary" href="#contact">Get in touch</a>
+				<a
+					class="button button--ghost"
+					href="/pablo-aragones-lopez-cv.pdf"
+					download="Pablo_Aragonés_Lopez_CV.pdf">Download CV</a
+				>
 				<a class="button button--ghost" href="#experience">Experience</a>
 			</div>
 		</section>
@@ -183,7 +224,7 @@ const tableauUrl = 'https://public.tableau.com/app/profile/pablo.aragon.s.l.pez/
 		<section id="contact" class="section" aria-labelledby="contact-title">
 			<h2 id="contact-title" class="section__title">Contact</h2>
 			<p class="section__body">
-				Best reach is email or LinkedIn. You can also explore my public Tableau work.
+				Best reach is email or LinkedIn. GitHub for code, Tableau for public dashboards — see links below.
 			</p>
 			<ul class="contact-list">
 				<li>
@@ -192,6 +233,11 @@ const tableauUrl = 'https://public.tableau.com/app/profile/pablo.aragon.s.l.pez/
 				<li>
 					<a class="contact-list__link" href={linkedInUrl} target="_blank" rel="noopener noreferrer">
 						LinkedIn
+					</a>
+				</li>
+				<li>
+					<a class="contact-list__link" href={githubUrl} target="_blank" rel="noopener noreferrer">
+						GitHub
 					</a>
 				</li>
 				<li>

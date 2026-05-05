@@ -525,3 +525,41 @@ a:focus-visible {
 	color: var(--color-ink-faint);
 	text-align: center;
 }
+
+/* Block: not-found */
+.not-found {
+	margin: clamp(3rem, 12vw, 6rem) auto;
+	max-width: 28rem;
+	text-align: center;
+}
+
+.not-found__title {
+	margin: 0 0 0.75rem;
+	font-family: var(--font-serif);
+	font-size: clamp(3rem, 8vw, 4rem);
+	font-weight: 500;
+	color: var(--color-ink);
+	letter-spacing: -0.04em;
+	line-height: 1;
+}
+
+.not-found__lead {
+	margin: 0 0 1.5rem;
+	font-size: 1.0625rem;
+	color: var(--color-ink-muted);
+	line-height: 1.6;
+}
+
+.not-found__actions {
+	margin: 0;
+}
+
+/* Block: hero — availability line */
+.hero__availability {
+	margin: 1.25rem auto 0;
+	max-width: var(--prose-max-width);
+	font-size: 0.9375rem;
+	color: var(--color-ink-faint);
+	line-height: 1.55;
+	text-align: left;
+}
