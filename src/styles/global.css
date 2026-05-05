@@ -1,8 +1,8 @@
 /* Theme — warm minimal / organic */
 :root {
-	--color-bg: #f5f2ed;
-	--color-bg-elevated: #faf8f5;
-	--color-surface: #fffcf7;
+	--color-bg: #fdfcfb;
+	--color-bg-elevated: #fefefe;
+	--color-surface: #ffffff;
 	--color-ink: #1f1c19;
 	--color-ink-muted: #5c5650;
 	--color-ink-faint: #8a847a;
@@ -10,7 +10,7 @@
 	--color-accent-hover: #2f4538;
 	--color-accent-soft: #e8efe9;
 	--color-border: #e3ddd4;
-	--color-border-soft: #ebe6df;
+	--color-border-soft: #f4f1eb;
 	--font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	--font-serif: 'Newsreader', 'Georgia', serif;
 	--radius-soft: 14px;
@@ -31,19 +31,19 @@
 	--w-color-primary-40: #9a9388;
 	--w-color-primary-50: #c9c2b6;
 	--w-color-primary-60: #e3ddd4;
-	--w-color-primary-70: #faf8f5;
+	--w-color-primary-70: #fefefe;
 	--w-color-info: #3d5a4a;
 	--w-color-info-accent: #4d6d5c;
-	--w-color-info-fg: #fffcf7;
+	--w-color-info-fg: #ffffff;
 	--w-color-success: #3d5a4a;
 	--w-color-success-accent: #2f4538;
-	--w-color-success-fg: #fffcf7;
+	--w-color-success-fg: #ffffff;
 	--w-color-warning: #8a6d3b;
 	--w-color-warning-accent: #a68447;
-	--w-color-warning-fg: #fffcf7;
+	--w-color-warning-fg: #ffffff;
 	--w-color-alert: #8b3a3a;
 	--w-color-alert-accent: #a34545;
-	--w-color-alert-fg: #fffcf7;
+	--w-color-alert-fg: #ffffff;
 	--w-color-overlay: rgba(31, 28, 25, 0.45);
 }
 
@@ -86,7 +86,7 @@ body {
 	inset: 0;
 	pointer-events: none;
 	z-index: 0;
-	opacity: 0.45;
+	opacity: 0.32;
 	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 	background-size: 180px 180px;
 	mix-blend-mode: multiply;
@@ -149,7 +149,7 @@ a:focus-visible {
 	top: 0;
 	z-index: 10;
 	padding: 1rem clamp(1.25rem, 5vw, 3rem);
-	background: rgba(245, 242, 237, 0.78);
+	background: rgba(253, 252, 251, 0.88);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
 	border-bottom: 1px solid var(--color-border-soft);
@@ -511,7 +511,7 @@ a:focus-visible {
 	margin-top: auto;
 	padding: 1.75rem clamp(1.25rem, 5vw, 3rem);
 	border-top: 1px solid var(--color-border-soft);
-	background: rgba(255, 252, 247, 0.65);
+	background: rgba(255, 255, 255, 0.82);
 	backdrop-filter: blur(8px);
 	-webkit-backdrop-filter: blur(8px);
 }
