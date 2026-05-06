@@ -9,6 +9,7 @@ const description =
 const projects: {
 	titleMain: string;
 	titleSub?: string;
+	type: 'Professional project' | 'Personal project';
 	outcome: string;
 	meta: string;
 	description: string;
@@ -17,6 +18,7 @@ const projects: {
 	{
 		titleMain: 'Asset Digitization',
 		titleSub: 'APM Terminals',
+		type: 'Professional project',
 		outcome: 'What changed: teams got a live view of terminal operations instead of waiting on delayed reports.',
 		meta: 'Java 17/21 · Spring Boot · Spring Cloud · Redis · Docker · Real-time telemetry',
 		description:
@@ -26,6 +28,7 @@ const projects: {
 	{
 		titleMain: 'Montana',
 		titleSub: 'Real-time mountain incident map',
+		type: 'Personal project',
 		outcome: 'What changed: hikers can report hazards in seconds and everyone sees updates right away.',
 		meta: 'Next.js · TypeScript · Supabase · PostGIS · PWA · Web Push',
 		description:
@@ -44,6 +47,7 @@ const projects: {
 	{
 		titleMain: 'PulsarDB',
 		titleSub: 'Lightweight time-series database',
+		type: 'Personal project',
 		outcome: 'What changed: faster writes and queries for edge/IoT data without heavy infrastructure.',
 		meta: 'Go · WAL · Concurrent in-memory engine · REST API · Edge/IoT',
 		description:
@@ -60,7 +64,7 @@ const projects: {
 const featuredProject = {
 	titleMain: 'Montana',
 	titleSub: 'Real-time mountain incident map',
-	kicker: 'Featured project',
+	kicker: 'Personal project',
 	outcome: 'What changed: reporting mountain hazards went from clunky to fast, real-time, and community-driven.',
 	description:
 		'A community map for hikers to report risks and useful waypoints. Reports are validated by votes, updates are live, and users can subscribe to push alerts.',
@@ -210,9 +214,13 @@ const structuredData = {
 			</article>
 			<ul class="project-list">
 				{
-					projects.filter((p) => p.titleMain !== featuredProject.titleMain).map((p) => (
+					projects
+						.filter((p) => p.titleMain !== featuredProject.titleMain)
+						.sort((a, b) => (a.titleMain === 'Asset Digitization' ? 1 : b.titleMain === 'Asset Digitization' ? -1 : 0))
+						.map((p) => (
 						<li>
 							<article class="project-card">
+								<p class="project-card__kicker">{p.type}</p>
 								<h3 class="project-card__title">
 									<span class="project-card__title-main">{p.titleMain}</span>
 									{p.titleSub && <span class="project-card__title-sub">{p.titleSub}</span>}

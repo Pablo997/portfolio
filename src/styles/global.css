@@ -686,6 +686,15 @@ a:focus-visible {
 	color: var(--color-ink);
 }
 
+.project-card__kicker {
+	margin: 0 0 0.45rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--color-ink-faint);
+}
+
 .project-card__title-main {
 	font-weight: 700;
 	color: var(--color-ink);
