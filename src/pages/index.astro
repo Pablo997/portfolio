@@ -176,24 +176,60 @@ const structuredData = {
 			<h2 id="experience-title" class="section__title">Experience</h2>
 			<div class="experience__timeline">
 				<Timeline theme="stroke fill">
-					<TimelineItem title="Lead Software Engineer — Systems, Servers & Solutions S.L. · Jul 2021 – Present">
-						Leading backend development and architecture for Maersk / APM Terminals digital products. Microservice
-						ecosystem (21 services) with Spring Boot, Spring Cloud, Redis, and Docker — live telemetry and
-						transactional data. CI/CD with Jenkins; event-driven patterns across services. Integrations with
-						industrial systems (Ignition, Navis 4, IFS, SQL Server). Observability with Prometheus, Grafana, and
-						ELK. Mentoring, code reviews, and collaboration with global stakeholders.
+					<TimelineItem title="Lead Software Engineer — Systems, Servers & Solutions S.L.">
+						<p class="experience__period">Jul 2021 — Present</p>
+						<ul class="experience__list">
+							<li class="experience__item">
+								Leading backend development and architecture for Maersk / APM Terminals digital products.
+							</li>
+							<li class="experience__item">
+								Microservice ecosystem (21 services) with Spring Boot, Spring Cloud, Redis, and Docker for live
+								telemetry and transactional data.
+							</li>
+							<li class="experience__item">
+								CI/CD with Jenkins and event-driven patterns across distributed services.
+							</li>
+							<li class="experience__item">
+								Integrations with Ignition, Navis 4, IFS, and SQL Server, plus observability with Prometheus,
+								Grafana, and ELK.
+							</li>
+							<li class="experience__item">
+								Mentoring, code reviews, and collaboration with global stakeholders.
+							</li>
+						</ul>
 					</TimelineItem>
-					<TimelineItem title="Technical Author — Baeldung · Mar 2022 – Present">
-						Technical articles on Spring Boot, microservices, and backend architecture; production-oriented GitHub
-						examples. Audience of 100K+ monthly readers across the Java community.
+					<TimelineItem title="Technical Author — Baeldung">
+						<p class="experience__period">Mar 2022 — Present</p>
+						<ul class="experience__list">
+							<li class="experience__item">
+								Authored technical articles on Spring Boot, microservices, and backend architecture.
+							</li>
+							<li class="experience__item">
+								Built production-oriented companion repositories and code examples.
+							</li>
+							<li class="experience__item">Work read by 100K+ monthly readers across the Java community.</li>
+						</ul>
 					</TimelineItem>
-					<TimelineItem title="Java Software Engineer — Systems, Servers & Solutions S.L. · Oct 2019 – Jul 2021">
-						Spring Boot, Hibernate, and JPA with TDD and clean architecture. Jenkins CI/CD and cross-team delivery
-						with frontend, QA, and DevOps.
+					<TimelineItem title="Java Software Engineer — Systems, Servers & Solutions S.L.">
+						<p class="experience__period">Oct 2019 — Jul 2021</p>
+						<ul class="experience__list">
+							<li class="experience__item">
+								Developed backend services with Spring Boot, Hibernate, and JPA.
+							</li>
+							<li class="experience__item">Applied TDD and clean architecture in production workflows.</li>
+							<li class="experience__item">
+								Improved CI/CD with Jenkins and delivered features with frontend, QA, and DevOps teams.
+							</li>
+						</ul>
 					</TimelineItem>
-					<TimelineItem title="Backend Developer (Intern) — Aire Networks del Mediterráneo · Nov 2018 – Apr 2019">
-						Backend components for data processing and predictive modelling in R&amp;D; ML/DL for network
-						optimization.
+					<TimelineItem title="Backend Developer (Intern) — Aire Networks del Mediterráneo">
+						<p class="experience__period">Nov 2018 — Apr 2019</p>
+						<ul class="experience__list">
+							<li class="experience__item">
+								Built backend components for data processing and predictive modelling in the R&amp;D team.
+							</li>
+							<li class="experience__item">Applied ML/DL techniques for network optimization use cases.</li>
+						</ul>
 					</TimelineItem>
 				</Timeline>
 			</div>
@@ -252,34 +288,37 @@ const structuredData = {
 			</ul>
 		</section>
 
-		<section id="contact" class="section" aria-labelledby="contact-title">
-			<h2 id="contact-title" class="section__title">Contact</h2>
-			<p class="section__body">
-				Best reach is email or LinkedIn. GitHub for code, Tableau for public dashboards — see links below.
-			</p>
-			<ul class="contact-list">
-				<li>
-					<a class="contact-list__link" href="mailto:pabloaragones97@gmail.com">Email</a>
-				</li>
-				<li>
-					<a class="contact-list__link" href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-						LinkedIn
+		<section id="contact" class="contact-band" aria-labelledby="contact-title">
+			<div class="contact-band__inner">
+				<h2 id="contact-title" class="contact-band__title">Let’s talk</h2>
+				<p class="contact-band__lead">
+					If you’re building backend platforms or event-driven systems and want a senior engineer on the team,
+					reach out.
+				</p>
+				<div class="contact-band__actions">
+					<a class="button button--primary" href="mailto:pabloaragones97@gmail.com">Email me</a>
+					<a class="button button--ghost" href="/pablo-aragones-lopez-cv.pdf" download>
+						Download CV
 					</a>
-				</li>
-				<li>
-					<a class="contact-list__link" href={githubUrl} target="_blank" rel="noopener noreferrer">
-						GitHub
-					</a>
-				</li>
-				<li>
-					<a class="contact-list__link" href={tableauUrl} target="_blank" rel="noopener noreferrer">
-						Tableau public
-					</a>
-				</li>
-				<li>
-					<a class="contact-list__link" href="tel:+34638279025">Phone</a>
-				</li>
-			</ul>
+				</div>
+				<ul class="contact-band__links" aria-label="Links">
+					<li class="contact-band__item">
+						<a class="contact-band__link" href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+							LinkedIn
+						</a>
+					</li>
+					<li class="contact-band__item">
+						<a class="contact-band__link" href={githubUrl} target="_blank" rel="noopener noreferrer">
+							GitHub
+						</a>
+					</li>
+					<li class="contact-band__item">
+						<a class="contact-band__link" href={tableauUrl} target="_blank" rel="noopener noreferrer">
+							Tableau Public
+						</a>
+					</li>
+				</ul>
+			</div>
 		</section>
 	</main>
 
