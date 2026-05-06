@@ -8,12 +8,14 @@ const description =
 
 const projects: {
 	title: string;
+	outcome: string;
 	meta: string;
 	description: string;
 	links: { label: string; href: string }[];
 }[] = [
 	{
 		title: 'Port operations digital twin (Maersk / APM Terminals)',
+		outcome: 'Outcome: Improved operational visibility for global terminal workflows with live telemetry.',
 		meta: 'Java 17/21 · Spring Boot · Spring Cloud · Redis · Docker · Real-time telemetry',
 		description:
 			'Real-time 3D monitoring for global terminal operations: cranes, vessels, and containers with live telemetry and operational data to improve port logistics and maintenance efficiency.',
@@ -21,6 +23,7 @@ const projects: {
 	},
 	{
 		title: 'Technical writing (Baeldung)',
+		outcome: 'Outcome: Shared production-grade backend patterns to a large Java engineering audience.',
 		meta: 'Spring Boot · Microservices · Backend architecture',
 		description:
 			'Articles and production-style examples for a large Java audience, with supporting GitHub repositories.',
@@ -33,6 +36,7 @@ const projects: {
 	},
 	{
 		title: 'Montana — Real-time mountain incident map',
+		outcome: 'Outcome: Reduced hazard reporting friction with real-time, community-validated incident flows.',
 		meta: 'Next.js · TypeScript · Supabase · PostGIS · PWA · Web Push',
 		description:
 			'Community map for hikers and mountain sports users to report hazards and useful waypoints, with voting-based validation, real-time updates, and push notifications.',
@@ -49,6 +53,7 @@ const projects: {
 	},
 	{
 		title: 'PulsarDB — Lightweight time-series database',
+		outcome: 'Outcome: Enabled low-latency ingestion and queries for edge/IoT time-series workloads.',
 		meta: 'Go · WAL · Concurrent in-memory engine · REST API · Edge/IoT',
 		description:
 			'High-throughput time-series database for edge and IoT workloads, focused on low-latency writes/queries and durability via binary WAL.',
@@ -61,18 +66,20 @@ const projects: {
 	},
 ];
 
-const publications: { title: string; date: string; href: string }[] = [
-	{
-		title: 'Handle Spring Security Exceptions',
-		date: 'Jan 2024',
-		href: 'https://www.baeldung.com/spring-security-exceptions',
-	},
-	{
-		title: '@RequestMapping Value in Properties File',
-		date: 'May 2022',
-		href: 'https://www.baeldung.com/spring-requestmapping-properties-file',
-	},
-];
+const featuredProject = {
+	title: 'Montana — Real-time mountain incident map',
+	kicker: 'Featured project',
+	outcome: 'Outcome: Reduced hazard reporting friction with real-time, community-validated incident flows.',
+	description:
+		'Community map for hikers and mountain sports users to report hazards and useful waypoints, with voting-based validation, real-time updates, and push notifications.',
+	meta: 'Next.js · TypeScript · Supabase · PostGIS · PWA · Web Push',
+	imageSrc: '/projects/montana-web-cover.svg',
+	imageAlt: 'Abstract mountain cover for Montana project',
+	links: [
+		{ label: 'Live', href: 'https://montana-web.vercel.app/' },
+		{ label: 'Repository', href: 'https://github.com/Pablo997/montana-web' },
+	],
+};
 
 const linkedInUrl =
 	'https://www.linkedin.com/in/pablo-aragon%C3%A9s-l%C3%B3pez-07ba3715b';
@@ -126,9 +133,8 @@ const structuredData = {
 			</button>
 			<nav id="primary-nav" class="site-header__nav" aria-label="Primary">
 				<a class="site-header__link" href="#about">About</a>
-				<a class="site-header__link" href="#experience">Experience</a>
 				<a class="site-header__link" href="/projects">Projects</a>
-				<a class="site-header__link" href="#writing">Writing</a>
+				<a class="site-header__link" href="#experience">Case studies</a>
 				<a class="site-header__link" href="#contact">Contact</a>
 			</nav>
 		</div>
@@ -146,102 +152,38 @@ const structuredData = {
 				Based in Alicante, Spain · Open to senior backend / architecture conversations · Remote-friendly within
 				compatible time zones.
 			</p>
+			<p class="hero__proof">
+				Built for Maersk / APM Terminals · Baeldung author · 6+ years shipping backend systems.
+			</p>
 			<div class="hero__actions">
 				<a class="button button--primary" href="#contact">Get in touch</a>
-				<a
-					class="button button--ghost"
-					href="/pablo-aragones-lopez-cv.pdf"
-					download="Pablo_Aragonés_Lopez_CV.pdf">Download CV</a
-				>
-				<a class="button button--ghost" href="#experience">Experience</a>
+				<a class="button button--ghost" href="/projects">View projects</a>
+				<a class="button button--ghost" href="#experience">See impact</a>
 			</div>
 		</section>
 
 		<section id="about" class="section" aria-labelledby="about-title">
 			<h2 id="about-title" class="section__title">About</h2>
 			<p class="section__body">
-				I’m based in <strong>Alicante, Spain</strong>. My focus is backend architecture, cloud-native development,
-				and data-intensive applications — with professional experience in <strong>Node.js (NestJS)</strong> and
-				<strong>Python</strong>, and a strong core in <strong>Java</strong> and the Spring ecosystem. I care
-				about scalability, resilience, and observability in systems that run 24/7.
+				I build backend systems for high-throughput, high-availability environments where reliability matters as
+				much as delivery speed. My focus is platform architecture, event-driven workflows, and operational
+				excellence in production.
 			</p>
-			<p class="section__body">
-				<strong>Education:</strong> Bachelor’s in Computer Engineering (Computation), University of Alicante
-				(2015–2019). Machine Learning course at Saturdays.AI (2019–2020). Linguistic immersion in English,
-				Universidad Internacional Menéndez Pelayo (2017).
+			<ul class="about-focus-list">
+				<li class="about-focus-list__item">
+					Designing resilient services with explicit trade-offs around consistency, latency, and scale.
+				</li>
+				<li class="about-focus-list__item">
+					Building event-driven systems with strong observability, clear ownership boundaries, and operational
+					guardrails.
+				</li>
+				<li class="about-focus-list__item">
+					Leading implementation from architecture to production, including mentoring and code quality practices.
+				</li>
+			</ul>
+			<p class="section__body about__closing">
+				Currently open to senior backend / platform opportunities where architecture and execution both matter.
 			</p>
-			<p class="section__body">
-				<strong>Languages:</strong> Spanish (native), English (C1 — daily professional use with international
-				clients).
-			</p>
-			<p class="section__body">
-				<strong>Core stack:</strong> Java (8→21), Spring Boot, Spring Cloud, Node.js (NestJS), Python, REST,
-				microservices, event-driven design, Docker, Jenkins, SQL Server, PostgreSQL, MongoDB, Redis,
-				Elasticsearch, Prometheus, Grafana, ELK, Git. Cloud: AWS, Azure; GCP and Kubernetes in progress.
-			</p>
-		</section>
-
-		<section id="experience" class="section experience" aria-labelledby="experience-title">
-			<h2 id="experience-title" class="section__title">Experience</h2>
-			<div class="experience__timeline">
-				<Timeline theme="stroke fill">
-					<TimelineItem title="Lead Software Engineer — Systems, Servers & Solutions S.L.">
-						<p class="experience__period">Jul 2021 — Present</p>
-						<ul class="experience__list">
-							<li class="experience__item">
-								Leading backend development and architecture for Maersk / APM Terminals digital products.
-							</li>
-							<li class="experience__item">
-								Microservice ecosystem with Spring Boot, Spring Cloud, Redis, and Docker for live
-								telemetry and transactional data.
-							</li>
-							<li class="experience__item">
-								CI/CD with Jenkins and event-driven patterns across distributed services.
-							</li>
-							<li class="experience__item">
-								Integrations with Ignition, Navis 4, IFS, and SQL Server, plus observability with Prometheus,
-								Grafana, and ELK.
-							</li>
-							<li class="experience__item">
-								Mentoring, code reviews, and collaboration with global stakeholders.
-							</li>
-						</ul>
-					</TimelineItem>
-					<TimelineItem title="Technical Author — Baeldung">
-						<p class="experience__period">Mar 2022 — Present</p>
-						<ul class="experience__list">
-							<li class="experience__item">
-								Authored technical articles on Spring Boot, microservices, and backend architecture.
-							</li>
-							<li class="experience__item">
-								Built production-oriented companion repositories and code examples.
-							</li>
-							<li class="experience__item">Work read by 100K+ monthly readers across the Java community.</li>
-						</ul>
-					</TimelineItem>
-					<TimelineItem title="Java Software Engineer — Systems, Servers & Solutions S.L.">
-						<p class="experience__period">Oct 2019 — Jul 2021</p>
-						<ul class="experience__list">
-							<li class="experience__item">
-								Developed backend services with Spring Boot, Hibernate, and JPA.
-							</li>
-							<li class="experience__item">Applied TDD and clean architecture in production workflows.</li>
-							<li class="experience__item">
-								Improved CI/CD with Jenkins and delivered features with frontend, QA, and DevOps teams.
-							</li>
-						</ul>
-					</TimelineItem>
-					<TimelineItem title="Backend Developer (Intern) — Aire Networks del Mediterráneo">
-						<p class="experience__period">Nov 2018 — Apr 2019</p>
-						<ul class="experience__list">
-							<li class="experience__item">
-								Built backend components for data processing and predictive modelling in the R&amp;D team.
-							</li>
-							<li class="experience__item">Applied ML/DL techniques for network optimization use cases.</li>
-						</ul>
-					</TimelineItem>
-				</Timeline>
-			</div>
 		</section>
 
 		<section id="projects" class="section" aria-labelledby="projects-title">
@@ -249,12 +191,32 @@ const structuredData = {
 				Projects
 				<a class="section__title-link" href="/projects">See full page</a>
 			</h2>
+			<article class="project-featured">
+				<div class="project-featured__media">
+					<img src={featuredProject.imageSrc} alt={featuredProject.imageAlt} loading="lazy" />
+				</div>
+				<div class="project-featured__content">
+					<p class="project-featured__kicker">{featuredProject.kicker}</p>
+					<h3 class="project-featured__title">{featuredProject.title}</h3>
+					<p class="project-featured__outcome">{featuredProject.outcome}</p>
+					<p class="project-featured__desc">{featuredProject.description}</p>
+					<p class="project-featured__meta">{featuredProject.meta}</p>
+					<div class="project-featured__links">
+						{featuredProject.links.map((link) => (
+							<a href={link.href} target="_blank" rel="noopener noreferrer">
+								{link.label}
+							</a>
+						))}
+					</div>
+				</div>
+			</article>
 			<ul class="project-list">
 				{
-					projects.map((p) => (
+					projects.filter((p) => p.title !== featuredProject.title).map((p) => (
 						<li>
 							<article class="project-card">
 								<h3 class="project-card__title">{p.title}</h3>
+								<p class="project-card__outcome">{p.outcome}</p>
 								<p class="project-card__meta">{p.meta}</p>
 								<p class="project-card__desc">{p.description}</p>
 								{p.links.length > 0 && (
@@ -273,28 +235,68 @@ const structuredData = {
 			</ul>
 		</section>
 
-		<section id="writing" class="section" aria-labelledby="writing-title">
-			<h2 id="writing-title" class="section__title">Selected publications</h2>
+		<section id="experience" class="section experience" aria-labelledby="experience-title">
+			<h2 id="experience-title" class="section__title">Case studies</h2>
+			<div class="experience__timeline">
+				<Timeline theme="stroke fill">
+					<TimelineItem title="Global terminal operations platform (Maersk / APM Terminals)">
+						<ul class="experience__list">
+							<li class="experience__item">
+								<strong>Role:</strong> Technical lead for backend architecture and delivery.
+							</li>
+							<li class="experience__item">
+								<strong>Scope:</strong> Distributed services for live telemetry and transactional
+								operations.
+							</li>
+							<li class="experience__item">
+								<strong>Constraints:</strong> High reliability requirements, industrial integrations, and
+								24/7 operations.
+							</li>
+							<li class="experience__item">
+								<strong>Outcome:</strong> More reliable delivery cycles and stronger observability
+								standards across teams.
+							</li>
+						</ul>
+					</TimelineItem>
+					<TimelineItem title="Backend knowledge at scale (Baeldung)">
+						<ul class="experience__list">
+							<li class="experience__item">
+								<strong>Role:</strong> Technical author for backend architecture topics.
+							</li>
+							<li class="experience__item">
+								<strong>Scope:</strong> Spring Boot, microservices, and production-style implementation
+								patterns.
+							</li>
+							<li class="experience__item">
+								<strong>Outcome:</strong> Practical guides that help engineers implement backend patterns
+								with confidence.
+							</li>
+						</ul>
+					</TimelineItem>
+					<TimelineItem title="Production backend foundations (S3)">
+						<ul class="experience__list">
+							<li class="experience__item">
+								<strong>Role:</strong> Backend engineer shipping production services.
+							</li>
+							<li class="experience__item">
+								<strong>Scope:</strong> Service design, implementation, testing, and release pipelines.
+							</li>
+							<li class="experience__item">
+								<strong>Outcome:</strong> Better maintainability and smoother cross-team delivery.
+							</li>
+						</ul>
+					</TimelineItem>
+				</Timeline>
+			</div>
+		</section>
+
+		<section id="now" class="section" aria-labelledby="now-title">
+			<h2 id="now-title" class="section__title">Now</h2>
 			<p class="section__body">
-				Representative tutorials on Baeldung — see the full list on my
-				<a href="https://www.baeldung.com/author/pabloaragoneslopez" target="_blank" rel="noopener noreferrer">
-					author profile
-				</a>.
+				I’m currently focused on backend platform work: event-driven architectures, operational reliability, and
+				clear engineering ownership. I’m also deepening Kubernetes and GCP to complement my production experience
+				on AWS and Azure.
 			</p>
-			<ul class="publication-list">
-				{
-					publications.map((pub) => (
-						<li class="publication-list__item">
-							<p class="publication-list__meta">Baeldung · {pub.date}</p>
-							<p class="publication-list__title">
-								<a href={pub.href} target="_blank" rel="noopener noreferrer">
-									{pub.title}
-								</a>
-							</p>
-						</li>
-					))
-				}
-			</ul>
 		</section>
 
 		<section id="contact" class="contact-band" aria-labelledby="contact-title">
@@ -306,9 +308,7 @@ const structuredData = {
 				</p>
 				<div class="contact-band__actions">
 					<a class="button button--primary" href="mailto:pabloaragones97@gmail.com">Email me</a>
-					<a class="button button--ghost" href="/pablo-aragones-lopez-cv.pdf" download>
-						Download CV
-					</a>
+					<a class="button button--ghost" href="/projects">Browse projects</a>
 				</div>
 				<ul class="contact-band__links" aria-label="Links">
 					<li class="contact-band__item">
@@ -330,10 +330,18 @@ const structuredData = {
 			</div>
 		</section>
 	</main>
+	<a class="mobile-contact-cta" href="mailto:pabloaragones97@gmail.com">Email me</a>
 
 	<footer class="site-footer">
 		<div class="site-footer__inner">
 			© {new Date().getFullYear()} Pablo Aragonés López · Alicante, Spain. Built with Astro.
+			<span aria-hidden="true"> · </span>
+			<a
+				class="site-footer__link"
+				href="https://www.baeldung.com/author/pabloaragoneslopez"
+				target="_blank"
+				rel="noopener noreferrer">Writing</a
+			>
 		</div>
 	</footer>
 </BaseLayout>
