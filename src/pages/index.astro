@@ -7,14 +7,16 @@ const description =
 	'I build reliable backend systems for real production workloads. Lead Software Engineer based in Alicante, working on distributed platforms and event-driven services.';
 
 const projects: {
-	title: string;
+	titleMain: string;
+	titleSub?: string;
 	outcome: string;
 	meta: string;
 	description: string;
 	links: { label: string; href: string }[];
 }[] = [
 	{
-		title: 'Port operations digital twin (Maersk / APM Terminals)',
+		titleMain: 'Asset Digitization',
+		titleSub: 'APM Terminals',
 		outcome: 'What changed: teams got a live view of terminal operations instead of waiting on delayed reports.',
 		meta: 'Java 17/21 · Spring Boot · Spring Cloud · Redis · Docker · Real-time telemetry',
 		description:
@@ -22,7 +24,8 @@ const projects: {
 		links: [],
 	},
 	{
-		title: 'Montana — Real-time mountain incident map',
+		titleMain: 'Montana',
+		titleSub: 'Real-time mountain incident map',
 		outcome: 'What changed: hikers can report hazards in seconds and everyone sees updates right away.',
 		meta: 'Next.js · TypeScript · Supabase · PostGIS · PWA · Web Push',
 		description:
@@ -39,7 +42,8 @@ const projects: {
 		],
 	},
 	{
-		title: 'PulsarDB — Lightweight time-series database',
+		titleMain: 'PulsarDB',
+		titleSub: 'Lightweight time-series database',
 		outcome: 'What changed: faster writes and queries for edge/IoT data without heavy infrastructure.',
 		meta: 'Go · WAL · Concurrent in-memory engine · REST API · Edge/IoT',
 		description:
@@ -54,7 +58,8 @@ const projects: {
 ];
 
 const featuredProject = {
-	title: 'Montana — Real-time mountain incident map',
+	titleMain: 'Montana',
+	titleSub: 'Real-time mountain incident map',
 	kicker: 'Featured project',
 	outcome: 'What changed: reporting mountain hazards went from clunky to fast, real-time, and community-driven.',
 	description:
@@ -187,7 +192,10 @@ const structuredData = {
 				</div>
 				<div class="project-featured__content">
 					<p class="project-featured__kicker">{featuredProject.kicker}</p>
-					<h3 class="project-featured__title">{featuredProject.title}</h3>
+					<h3 class="project-featured__title">
+						<span class="project-showcase__title-main">{featuredProject.titleMain}</span>
+						<span class="project-showcase__title-sub">{featuredProject.titleSub}</span>
+					</h3>
 					<p class="project-featured__outcome">{featuredProject.outcome}</p>
 					<p class="project-featured__desc">{featuredProject.description}</p>
 					<p class="project-featured__meta">{featuredProject.meta}</p>
@@ -202,10 +210,13 @@ const structuredData = {
 			</article>
 			<ul class="project-list">
 				{
-					projects.filter((p) => p.title !== featuredProject.title).map((p) => (
+					projects.filter((p) => p.titleMain !== featuredProject.titleMain).map((p) => (
 						<li>
 							<article class="project-card">
-								<h3 class="project-card__title">{p.title}</h3>
+								<h3 class="project-card__title">
+									<span class="project-card__title-main">{p.titleMain}</span>
+									{p.titleSub && <span class="project-card__title-sub">{p.titleSub}</span>}
+								</h3>
 								<p class="project-card__outcome">{p.outcome}</p>
 								<p class="project-card__meta">{p.meta}</p>
 								<p class="project-card__desc">{p.description}</p>

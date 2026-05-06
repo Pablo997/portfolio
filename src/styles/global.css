@@ -678,11 +678,26 @@ a:focus-visible {
 
 .project-card__title {
 	margin: 0 0 0.5rem;
-	font-family: var(--font-sans);
-	font-size: 1.0625rem;
-	font-weight: 600;
-	letter-spacing: -0.015em;
+	font-family: var(--font-serif);
+	font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+	font-weight: 500;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
 	color: var(--color-ink);
+}
+
+.project-card__title-main {
+	font-weight: 700;
+	color: var(--color-ink);
+}
+
+.project-card__title-sub {
+	margin-left: 0.35rem;
+	font-family: var(--font-sans);
+	font-size: 0.72em;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	color: var(--color-ink-faint);
 }
 
 .project-card__meta {
@@ -1042,6 +1057,48 @@ a:focus-visible {
 		0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
+.project-showcase__media-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: 13.5rem;
+	padding: 1.1rem;
+	border-radius: var(--radius-soft);
+	border: 1px solid rgba(0, 0, 0, 0.06);
+	background:
+		radial-gradient(circle at 20% 20%, rgba(61, 90, 74, 0.18), transparent 45%),
+		radial-gradient(circle at 80% 75%, rgba(199, 182, 158, 0.22), transparent 50%),
+		linear-gradient(135deg, #fbfaf8, #f2ede6);
+	box-shadow:
+		0 4px 14px rgba(0, 0, 0, 0.06),
+		0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.project-showcase__media-kicker {
+	margin: 0 0 0.35rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--color-ink-faint);
+}
+
+.project-showcase__media-title {
+	margin: 0;
+	font-family: var(--font-serif);
+	font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+	font-weight: 500;
+	color: var(--color-ink);
+	letter-spacing: -0.015em;
+}
+
+.project-showcase__media-subtitle {
+	margin: 0.25rem 0 0;
+	font-size: 0.88rem;
+	font-weight: 500;
+	color: var(--color-ink-muted);
+}
+
 
 .project-showcase__content {
 	max-width: var(--prose-max-width);
@@ -1064,6 +1121,22 @@ a:focus-visible {
 	letter-spacing: -0.02em;
 	line-height: 1.2;
 	color: var(--color-ink);
+}
+
+.project-showcase__title-main {
+	display: inline;
+	font-weight: 600;
+	color: var(--color-ink);
+}
+
+.project-showcase__title-sub {
+	display: inline;
+	margin-left: 0.35rem;
+	font-family: var(--font-sans);
+	font-size: 0.72em;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	color: var(--color-ink-faint);
 }
 
 .project-showcase__summary {
