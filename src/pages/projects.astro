@@ -4,9 +4,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Built & Shipped — Pablo Aragonés López';
 const description =
 	'Built & shipped software projects by Pablo Aragonés López, including live demos, repositories, and technical highlights.';
+const ogImage = '/projects/montana-web-cover.svg';
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} ogImage={ogImage}>
 	<header class="site-header">
 		<div class="site-header__inner">
 			<a class="site-header__brand" href="/">Pablo Aragonés López</a>
@@ -20,7 +21,7 @@ const description =
 				☰
 			</button>
 			<nav id="primary-nav" class="site-header__nav" aria-label="Primary">
-				<a class="site-header__link" href="/#about">About</a>
+				<a class="site-header__link" href="/">Home</a>
 				<a class="site-header__link" href="/projects" aria-current="page">Projects</a>
 				<a class="site-header__link" href="/#experience">Case studies</a>
 				<a class="site-header__link" href="/#contact">Contact</a>
@@ -39,7 +40,8 @@ const description =
 					<img
 						src="/projects/montana-web-cover.svg"
 						alt="Montana project cover with map and incident markers"
-						loading="lazy"
+						loading="eager"
+						fetchpriority="high"
 					/>
 				</div>
 
@@ -95,7 +97,7 @@ const description =
 					<img
 						src="/projects/pulsardb-cover.svg"
 						alt="PulsarDB project cover with metrics graph and timeline line"
-						loading="lazy"
+						loading="eager"
 					/>
 				</div>
 				<div class="project-showcase__content">

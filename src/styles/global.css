@@ -167,11 +167,11 @@ a:focus-visible {
 }
 
 .site-header__brand {
-	font-family: var(--font-serif);
-	font-weight: 600;
-	font-size: 1.1875rem;
-	letter-spacing: -0.02em;
-	color: var(--color-ink);
+	font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+	font-weight: 500;
+	font-size: 1.02rem;
+	letter-spacing: 0.01em;
+	color: var(--color-ink-muted);
 	text-decoration: none;
 	transition: color var(--transition-fast);
 }
@@ -243,6 +243,15 @@ a:focus-visible {
 .site-header__link:hover {
 	color: var(--color-accent);
 	text-decoration: none;
+}
+
+.site-header__link[aria-current='page'] {
+	color: var(--color-accent);
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: rgba(61, 90, 74, 0.28);
+	text-decoration-thickness: 0.12em;
+	text-underline-offset: 0.2em;
 }
 
 @media (min-width: 48rem) {
