@@ -66,5 +66,36 @@ const ogImageURL = ogImage.startsWith('http')
 	<body class="site">
 		<a class="site__skip-link" href="#main">Skip to content</a>
 		<slot />
+		<script is:inline>
+			const MOBILE_BREAKPOINT = 768;
+			const toggles = document.querySelectorAll('.js-nav-toggle');
+
+			for (const toggle of toggles) {
+				const targetId = toggle.getAttribute('aria-controls');
+				if (!targetId) continue;
+				const nav = document.getElementById(targetId);
+				if (!nav) continue;
+
+				const closeMenu = () => {
+					nav.classList.remove('is-open');
+					toggle.setAttribute('aria-expanded', 'false');
+				};
+
+				toggle.addEventListener('click', () => {
+					const isOpen = nav.classList.toggle('is-open');
+					toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+				});
+
+				nav.querySelectorAll('.site-header__link').forEach((link) => {
+					link.addEventListener('click', () => {
+						if (window.innerWidth < MOBILE_BREAKPOINT) closeMenu();
+					});
+				});
+
+				window.addEventListener('resize', () => {
+					if (window.innerWidth >= MOBILE_BREAKPOINT) closeMenu();
+				});
+			}
+		</script>
 	</body>
 </html>
